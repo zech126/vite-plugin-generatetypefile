@@ -1,3 +1,6 @@
+# 说明
+用于 vite 生成 ***.d.ts 文件
+
 # 安装
 yarn add vite-plugin-generatetypefile -D
 
