@@ -1,0 +1,44 @@
+{
+  "name": "vite-plugin-generatetypefile",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": "zech126",
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [
+    "vite-plugin-generatetypefile",
+    "vite-plugin-generate-type-file",
+    "generatetypefile",
+    "typeFile",
+    "zech126"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fast-glob": "^3.2.11",
+    "ts-morph": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2",
+    "vite": "^2.8.6",
+    "vite-plugin-generatetypefile": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zech126/vite-plugin-generatetypefile.git"
+  }
+}
