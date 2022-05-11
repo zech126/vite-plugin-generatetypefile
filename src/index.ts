@@ -7,7 +7,7 @@ let config: ResolvedConfig;
 export default function compression(options:generateType = {}):Plugin {
   return {
     // 插件名称
-    name: 'vite:compressionZip',
+    name: 'vite:generatetypefile',
     // 该插件在 plugin-vue 插件之后执行
     enforce: 'post',
     // 获取配置
