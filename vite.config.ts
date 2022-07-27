@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
-import vitePluginGenerateTypeFile from "vite-plugin-generatetypefile";
-
+import vitePluginGenerateTypeFile from "./src/index";
+console.log(vitePluginGenerateTypeFile)
 const path = require('path');
 // 输出目录
 const projectName = 'dist';
@@ -8,7 +8,9 @@ const projectName = 'dist';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vitePluginGenerateTypeFile()
+    vitePluginGenerateTypeFile({
+      files: ['src/**/types.ts']
+    })
   ],
   root: process.cwd(),
   base: "./",

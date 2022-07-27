@@ -1,10 +1,10 @@
-import type { Plugin, ResolvedConfig } from 'vite';
+import type { Plugin, ResolvedConfig, UserConfig, ConfigEnv } from 'vite';
 import { generateType } from './types';
 import generateTypeFile from './generateTypeFile';
 
 let config: ResolvedConfig;
 
-export default function compression(options:generateType = {}):Plugin {
+export default function compression(options:generateType = {}, apply?: "build" | "serve" | ((config: UserConfig, env: ConfigEnv) => boolean)):Plugin {
   return {
     // 插件名称
     name: 'vite:generatetypefile',
@@ -15,7 +15,7 @@ export default function compression(options:generateType = {}):Plugin {
       config = resolvedConfig;
     },
     // build 时执行
-    apply: 'build',
+    apply: apply ? apply : 'build',
     // 在 vite 本地服务关闭前，rollup 输出文件到目录前调用
     closeBundle () {
       const generateOptions:generateType = {
